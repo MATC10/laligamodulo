@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record model="laligamodulo.player">
+            <field name="name">Jude Bellingham</field>
+            <field name="position">midfielder</field>
+            <field name="nationality">uk</field>
+            <field name="age">18</field>
+            <field name="height">1.86</field>
+            <field name="preferred_foot">right</field>
+            <field name="goals">18</field>
+            <field name="assists">6</field>
+        </record>
+        <record model="laligamodulo.player">
+            <field name="name">Luka Modric</field>
+            <field name="position">midfielder</field>
+            <field name="nationality">ot</field>
+            <field name="age">35</field>
+            <field name="height">1.72</field>
+            <field name="preferred_foot">right</field>
+        </record>
+        <record model="laligamodulo.match">
+            <field name="name">Real Madrid vs Barcelona</field>
+            <field name="date">2022-03-20</field>
+        </record>
+        <record model="laligamodulo.coach">
+            <field name="name">Carlo Ancelotti</field>
+        </record>
+        <record model="laligamodulo.team">
+            <field name="name">Real Madrid</field>
+            <field name="wins">22</field>
+            <field name="draws">7</field>
+            <field name="losses">4</field>
+        </record>
+        <record id="laligamodulo.stadium" model="laligamodulo.stadium">
+            <field name="name">Santiago Bernabéu</field>
+            <field name="location">madrid</field>
+        </record>
+    </data>
+</odoo>

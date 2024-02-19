@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+player_responsable,access.laligamodulo.player,model_laligamodulo_player,laligamodulo_manager,1,1,1,1
+team_responsable,access.laligamodulo.team,model_laligamodulo_team,laligamodulo_manager,1,1,1,1
+coach_responsable,access.laligamodulo.coach,model_laligamodulo_coach,laligamodulo_manager,1,1,1,1
+stadium_responsable,access.laligamodulo.stadium,model_laligamodulo_stadium,laligamodulo_manager,1,1,1,1
+match_responsable,access.laligamodulo.match,model_laligamodulo_match,laligamodulo_manager,1,1,1,1
+
+
+player_user,access.laligamodulo.player,model_laligamodulo_player,laligamodulo_user,1,0,1,0
+team_user,access.laligamodulo.team,model_laligamodulo_team,laligamodulo_user,1,0,1,0
+coach_user,access.laligamodulo.coach,model_laligamodulo_coach,laligamodulo_user,1,0,1,0
+stadium_user,access.laligamodulo.stadium,model_laligamodulo_stadium,laligamodulo_user,1,0,1,0
+match_user,access.laligamodulo.match,model_laligamodulo_match,laligamodulo_user,1,0,1,0

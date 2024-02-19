@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+
+        <!--REPORT PARA MATCH-->
+
+        <report
+            id="laligamodulo.report_match"
+            model="laligamodulo.match"
+            string="Informe partido"
+            name="laligamodulo.report_match_view"
+            file="laligamodulo.report_match_view"
+            report_type="qweb-pdf" />
+
+        <template id="laligamodulo.report_match_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="match">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="match.name" />
+                            <div>
+                                <strong>Fecha del Partido</strong>
+                                <span t-field="match.date" />
+                            </div>
+                            <div>
+                                <strong>Partido de Alto Riesgo</strong>
+                                <span t-field="match.high_risk_match" />
+                            </div>
+                            <div>
+                                <strong>Estadio</strong>
+                                <span t-field="match.stadium_id" />
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

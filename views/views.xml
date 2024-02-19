@@ -1,0 +1,313 @@
+<odoo>
+  <data>
+    <!-- vista de árbol de player-->
+    <record model="ir.ui.view" id="laligamodulo.player_tree">
+      <field name="name">laligamodulo.player.tree</field>
+      <field name="model">laligamodulo.player</field>
+      <field name="arch" type="xml">
+        <tree string="Jugador">
+          <field name="name"/>
+          <field name="position"/>
+          <field name="team_id"/>
+          <field name="matches"/>
+          <field name="goals"/>
+          <field name="assists"/>
+          <field name="yellow_cards"/>
+          <field name="red_cards"/>
+          <field name="nationality"/>
+          <field name="age"/>
+          <field name="height"/>
+          <field name="preferred_foot"/>
+          <field name="goal_contributions"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- vista de formulario de player-->
+    <record model="ir.ui.view" id="laligamodulo.player_form">
+      <field name="name">laligamodulo.player.form</field>
+      <field name="model">laligamodulo.player</field>
+      <field name="arch" type="xml">
+        <form string="Jugador">
+          <group colspan="1" col="2">
+            <field name="name"/>
+            <field name="position"/>
+            <field name="team_id"/>
+            <field name="matches"/>
+            <field name="goals"/>
+            <field name="assists"/>
+            <field name="yellow_cards"/>
+            <field name="red_cards"/>
+            <field name="nationality"/>
+            <field name="age"/>
+            <field name="height"/>
+            <field name="preferred_foot"/>
+            <field name="goal_contributions"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- vista de búsqueda de player-->
+    <record model="ir.ui.view" id="laligamodulo.player_search_view">
+      <field name="name">laligamodulo.player.search</field>
+      <field name="model">laligamodulo.player</field>
+      <field name="arch" type="xml">
+        <search>
+            <field name="name" string="Jugador"/>
+            <field name="position" string="Posición"/>
+            <field name="goals"/>
+            <filter name="Goleadores" domain="[('goals','&gt;=',10)]"/>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- acciones de player-->
+    <record model="ir.actions.act_window" id="laligamodulo.player_action_window">
+      <field name="name">laligamodulo.player.action_window</field>
+      <field name="res_model">laligamodulo.player</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- vista de árbol de match-->
+    <record model="ir.ui.view" id="laligamodulo.match_tree">
+      <field name="name">laligamodulo.match.tree</field>
+      <field name="model">laligamodulo.match</field>
+      <field name="arch" type="xml">
+        <tree string="Partido">
+          <field name="name"/>
+          <field name="date"/>
+          <field name="high_risk_match"/>
+          <field name="stadium_id"/>
+          <field name="player_ids"/>
+        </tree>
+      </field>
+    </record>
+
+
+<!-- vista de formulario de match -->
+<record model="ir.ui.view" id="laligamodulo.match_form">
+  <field name="name">laligamodulo.match.form</field>
+  <field name="model">laligamodulo.match</field>
+  <field name="arch" type="xml">
+    <form string="Partido">
+      <sheet>
+      <group colspan="4" col="2">
+        <field name="name"/>
+        <field name="date"/>
+        <field name="high_risk_match"/>
+        <field name="stadium_id">
+          <tree>
+            <field name="name"/>
+            <field name="location"/>
+          </tree>
+        </field>
+        <field name="player_ids">
+          <tree>
+            <field name="name"/>
+            <field name="position"/>
+            <field name="team_id"/>
+          </tree>
+        </field>
+      </group>
+      </sheet>
+    </form>
+  </field>
+</record>
+
+
+    <!-- acciones de match -->
+    <record model="ir.actions.act_window" id="laligamodulo.match_action_window">
+      <field name="name">laligamodulo.match.action_window</field>
+      <field name="res_model">laligamodulo.match</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- vista de árbol de coach-->
+    <record model="ir.ui.view" id="laligamodulo.coach_tree">
+      <field name="name">laligamodulo.coach.tree</field>
+      <field name="model">laligamodulo.coach</field>
+      <field name="arch" type="xml">
+        <tree string="Entrenador">
+          <field name="name"/>
+          <field name="team_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- vista de formulario de coach-->
+    <record model="ir.ui.view" id="laligamodulo.coach_form">
+      <field name="name">laligamodulo.coach.form</field>
+      <field name="model">laligamodulo.coach</field>
+      <field name="arch" type="xml">
+        <form string="Entrenador">
+          <group colspan="1" col="2">
+            <field name="name"/>
+            <field name="team_id"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- acciones de coach-->
+    <record model="ir.actions.act_window" id="laligamodulo.coach_action_window">
+      <field name="name">laligamodulo.coach.action_window</field>
+      <field name="res_model">laligamodulo.coach</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- vista de árbol de team-->
+    <record model="ir.ui.view" id="laligamodulo.team_tree">
+      <field name="name">laligamodulo.team.tree</field>
+      <field name="model">laligamodulo.team</field>
+      <field name="arch" type="xml">
+        <tree string="Equipo">
+          <field name="name"/>
+          <field name="coach_id"/>
+          <field name="player_ids"/>
+          <field name="wins"/>
+          <field name="draws"/>
+          <field name="losses"/>
+          <field name="total_points"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- vista de formulario de team-->
+    <record model="ir.ui.view" id="laligamodulo.team_form">
+      <field name="name">laligamodulo.team.form</field>
+      <field name="model">laligamodulo.team</field>
+      <field name="arch" type="xml">
+        <form string="Equipo">
+          <group colspan="1" col="2">
+            <field name="name"/>
+            <field name="coach_id"/>
+            <field name="player_ids">
+              <tree>
+                <field name="name"/>
+                <field name="position"/>
+              </tree>
+            </field>
+            <field name="wins"/>
+            <field name="draws"/>
+            <field name="losses"/>
+            <field name="total_points"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- vista de búsqueda de team-->
+    <record model="ir.ui.view" id="laligamodulo.team_search_view">
+      <field name="name">laligamodulo.team.search</field>
+      <field name="model">laligamodulo.team</field>
+      <field name="arch" type="xml">
+        <search>
+            <field name="name" string="Equipo"/>
+            <field name="wins"/>
+            <filter name="Equipos Ganadores" domain="[('wins','&gt;=',10)]"/>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- acciones de team-->
+    <record model="ir.actions.act_window" id="laligamodulo.team_action_window">
+      <field name="name">laligamodulo.team.action_window</field>
+      <field name="res_model">laligamodulo.team</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- vista de árbol de stadium-->
+    <record model="ir.ui.view" id="laligamodulo.stadium_tree">
+      <field name="name">laligamodulo.stadium.tree</field>
+      <field name="model">laligamodulo.stadium</field>
+      <field name="arch" type="xml">
+        <tree string="Estadio">
+          <field name="name"/>
+          <field name="location"/>
+          <field name="matches"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- vista de formulario de stadium-->
+    <record model="ir.ui.view" id="laligamodulo.stadium_form">
+      <field name="name">laligamodulo.stadium.form</field>
+      <field name="model">laligamodulo.stadium</field>
+      <field name="arch" type="xml">
+        <form string="Estadio">
+          <group colspan="1" col="2">
+            <field name="name"/>
+            <field name="location"/>
+            <field name="matches">
+              <tree>
+                <field name="name"/>
+                <field name="date"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- acciones de stadium-->
+    <record model="ir.actions.act_window" id="laligamodulo.stadium_action_window">
+      <field name="name">laligamodulo.stadium.action_window</field>
+      <field name="res_model">laligamodulo.stadium</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--menús-->
+
+    <menuitem name="LaLiga" 
+              id="laligamodulo.menu_root" 
+              groups="laligamodulo_manager,laligamodulo_user"
+              active="True"
+              sequence="10"/>
+    <menuitem name="Jugadores" 
+              id="laligamodulo.player_menu" 
+              parent="laligamodulo.menu_root"
+              groups="laligamodulo_manager,laligamodulo_user"
+              action="laligamodulo.player_action_window"
+              sequence="10"/>
+    <menuitem name="Partidos" 
+              id="laligamodulo.match_menu" 
+              parent="laligamodulo.menu_root"
+              groups="laligamodulo_manager,laligamodulo_user"
+              action="laligamodulo.match_action_window"
+              sequence="10"/>
+    <menuitem name="Entrenadores" 
+              id="laligamodulo.coach_menu" 
+              parent="laligamodulo.menu_root"
+              groups="laligamodulo_manager,laligamodulo_user"
+              action="laligamodulo.coach_action_window"
+              sequence="10"/>
+    <menuitem name="Equipos" 
+              id="laligamodulo.team_menu" 
+              parent="laligamodulo.menu_root"
+              groups="laligamodulo_manager,laligamodulo_user"
+              action="laligamodulo.team_action_window"
+              sequence="10"/>
+    <menuitem name="Estadios" 
+              id="laligamodulo.stadium_menu" 
+              parent="laligamodulo.menu_root"
+              groups="laligamodulo_manager,laligamodulo_user"
+              action="laligamodulo.stadium_action_window"
+              sequence="10"/>
+
+
+  </data>
+</odoo>

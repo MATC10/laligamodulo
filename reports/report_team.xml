@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+
+        <!-- REPORT TEAM -->
+        <report
+            id="laligamodulo.report_team"
+            model="laligamodulo.team"
+            string="Informe equipo"
+            name="laligamodulo.report_team_view"
+            file="laligamodulo.report_team_view"
+            report_type="qweb-pdf" />
+
+        <template id="laligamodulo.report_team_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="team">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="team.name" />
+                            <div>
+                                <strong>Victorias</strong>
+                                <span t-field="team.wins" />
+                            </div>
+                            <div>
+                                <strong>Empates</strong>
+                                <span t-field="team.draws" />
+                            </div>
+                            <div>
+                                <strong>Derrotas</strong>
+                                <span t-field="team.losses" />
+                            </div>
+                            <div>
+                                <strong>Puntos Totales</strong>
+                                <span t-field="team.total_points" />
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

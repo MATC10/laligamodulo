@@ -1,0 +1,14 @@
+<odoo>
+    <!--ADMINISTRADORES-->
+    <data>
+        <record id="laligamodulo_manager" model="res.groups">
+            <field name="name">LaLiga / Responsable</field>
+        </record>
+    </data>
+
+    <!--USUARIOS-->
+    <record id="laligamodulo_user" model="res.groups">
+        <field name="name">LaLiga / Usuario</field>
+    </record>
+    
+</odoo>

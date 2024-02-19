@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+        <!--REPORT PARA PLAYER-->
+        <report
+        id="laligamodulo.report_player"
+        model="laligamodulo.player"
+        string="Informe jugador"
+        name="laligamodulo.report_player_view"
+        file="laligamodulo.report_player_view"
+        report_type="qweb-pdf"/>
+
+        <template id="report_player_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="player">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="player.name"/>
+                            <div>
+                                <strong>Posición</strong>
+                                <span t-field="player.position"/>
+                            </div>
+                            <div>
+                                <strong>Equipo</strong>
+                                <span t-field="player.team_id"/>
+                            </div>
+                            <div>
+                                <strong>Goles</strong>
+                                <span t-field="player.goals"/>
+                            </div>
+                            <div>
+                                <strong>Tarjetas amarillas</strong>
+                                <span t-field="player.yellow_cards"/>
+                            </div>
+                            <div>
+                                <strong>Tarjetas rojas</strong>
+                                <span t-field="player.red_cards"/>
+                            </div>
+                            <div>
+                                <strong>Contribuciones de gol</strong>
+                                <span t-field="player.goal_contributions"/>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
